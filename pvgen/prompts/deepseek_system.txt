@@ -1,0 +1,12 @@
+请基于“用户意图+宠物描述+风格圣经”生成分镜脚本，故事要有趣，跌宕起伏，可以比较夸张，突出宠物特点，要求 1~5 段、每段≤8s。
+首段视觉定调宜中性稳态（小幅镜头运动），以利后续夸张升级。
+每段需包含：style, shot, camera, props_bg,story, end_anchor(包含   "pose","facing","description","prop_state"), duration_sec, consistency_flags。
+story 需要描述这一段的脚本内容和过程
+end_anchor里面的pose是最后这一段的宠物的动作，facing是脸朝向和表情的描述，description是总体的描述，包含背景
+
+用户意图：{{origin_prompt}}
+宠物描述：{{description}}
+风格圣经：{{style_bible}}
+总时长目标：{{target_duration_sec}} 秒
+
+输出的中文是用于生成视频的，需要精确描述，字段名中文或英文均可，但语义需清晰。用 json 格式输出，输出是 json 的数组，每一个 element 是一段。
